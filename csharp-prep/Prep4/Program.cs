@@ -37,7 +37,7 @@ class Program
 
         int max = number[0];
 
-        foreach (int x in number);   
+        foreach (int x in number)   
         {
             if (number > max)
             {
