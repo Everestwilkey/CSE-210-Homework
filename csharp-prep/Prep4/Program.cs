@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Enter a list of numbers, type 0 when finished!");
         string contiune = "y";
-        List<int> number = new List<int>();
+        List<int> numbers = new List<int>();
         while (contiune == "y")
         {
             Console.Write("enter a number");
@@ -17,31 +17,31 @@ class Program
             }
             else
             {
-                number.Add(entery);
+                numbers.Add(entery);
             }
 
         }
-        for (int i = 0; i < number.Count; i++)
+        for (int i = 0; i < numbers.Count; i++)
         {
-            Console.WriteLine(number[i]);
+            Console.WriteLine(numbers[i]);
         }
         int sum = 0;
-        foreach (int numbers in number)
+        foreach (int number in numbers)
         {
-            sum += numbers;
+            sum += number;
         }
         Console.WriteLine($"the Sum is {sum} ");
 
-        float avg = ((float)sum) / number.Count;
+        float avg = ((float)sum) / numbers.Count;
         Console.WriteLine($"the average is {avg}");
 
-        int max = number[0];
+        float max = numbers[0];
 
-        foreach (int x in number)   
+        foreach (float x in numbers)   
         {
-            if (number > max)
+            if (x > max)
             {
-                max = number;
+                max = numbers;
             }
         }     
     
