@@ -17,24 +17,30 @@ namespace Develop02
             switch (input)
             {
                 case "1":
+                    string choice = "";
                     Entry myentry = new Entry();
                     Console.WriteLine("What is todays date?"); 
                     myentry.date = Console.ReadLine();
-                    myentry.prompt = "What did you have for dinner?"; 
+                    myentry.prompt = myentry.GetPromt(); 
                     Console.WriteLine(myentry.prompt);
                     myentry.response = Console.ReadLine();
                     Journal journal = new Journal();
                     journal.AddEntry(myentry);
+
+                    string messages = myentry.ConvertToString();
+                    Console.WriteLine($"here is the promt and your respons. {messages} would you like to save it: ");
+                    choice = Console.ReadLine();
+                    if (choice == "yes")
+                    {
+                        Datastorage myfile = new Datastorage();
+                        myfile.filename = Datastorage.Getfilename();
+                        Datastorage.SaveFile(myfile.filename, messages);
+                    }
                     break;
             }
 
 
-            //List<Entry> entries = journal.GetAllEntries();
-            //foreach (Entry entry in entries)
-                //{
-                //    string messages = entry.ConvertToString();
-                //    Console.WriteLine(messages);
-                //}
+            
 
 
 

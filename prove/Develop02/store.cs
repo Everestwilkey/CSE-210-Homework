@@ -14,7 +14,7 @@ namespace Develop02
         }
         public static void SaveFile(string filename, string entry)
         {
-            File.WriteAllText(filename,entry);
+            File.AppendAllText(filename,entry);
             Console.WriteLine("SAVED");
         }
     }
