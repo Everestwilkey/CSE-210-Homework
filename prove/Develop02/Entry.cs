@@ -25,6 +25,6 @@ namespace Develop02
                 int RandomIndex = random.Next(listOfPrompts.Count);
                 return listOfPrompts[RandomIndex];
             }
-
+        
     }
 }

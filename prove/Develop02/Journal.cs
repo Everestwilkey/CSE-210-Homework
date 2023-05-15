@@ -19,6 +19,5 @@ namespace Develop02
         {
             return this.entries;
         }
-        
     }
 }

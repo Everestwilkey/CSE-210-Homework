@@ -14,31 +14,25 @@ namespace Develop02
             }
             Console.Write("Choose what you would like to do");
             string input = Console.ReadLine();
-            switch (input)
+            DateTime Currentdate = DateTime.Now;
+            string DateText = Currentdate.ToShortDateString();
+            if (input == "1")
             {
-                case "1":
-                    string choice = "";
+                    
                     Entry myentry = new Entry();
                     Console.WriteLine("What is todays date?"); 
-                    myentry.date = Console.ReadLine();
+                    myentry.date = DateText;
                     myentry.prompt = myentry.GetPromt(); 
                     Console.WriteLine(myentry.prompt);
                     myentry.response = Console.ReadLine();
                     Journal journal = new Journal();
                     journal.AddEntry(myentry);
-
                     string messages = myentry.ConvertToString();
                     Console.WriteLine($"here is the promt and your respons. {messages} would you like to save it: ");
-                    choice = Console.ReadLine();
-                    if (choice == "yes")
-                    {
-                        Datastorage myfile = new Datastorage();
-                        myfile.filename = Datastorage.Getfilename();
-                        Datastorage.SaveFile(myfile.filename, messages);
-                    }
-                    break;
             }
-
+            else if (input == "2")
+            {
+            }
 
             
 
