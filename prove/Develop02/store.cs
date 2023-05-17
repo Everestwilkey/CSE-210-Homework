@@ -5,18 +5,24 @@ namespace Develop02
 {
     public class Datastorage
     {
-        public string filename;
-        public static string Getfilename()
+        public string _filename;
+        public string GetFilename()
         {
             Console.WriteLine("Please Enter file name: ");
-            string filename = Console.ReadLine();
-                return filename;
+            string _filename = Console.ReadLine();
+            return _filename;
         }
-        public static void SaveFile(string filename, string entry)
+        public void SaveFile(List<Entry> entries, string filename)
         {
-            File.AppendAllText(filename,entry);
-            Console.WriteLine("SAVED");
+            using (StreamWriter writer = File.AppendText(filename))
+            {
+                foreach (Entry entry in entries)
+                {
+                    writer.WriteLine(entry.ConvertToString());
+                }
+            }
         }
+
     }
 
 }

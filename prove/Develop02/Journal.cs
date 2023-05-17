@@ -19,5 +19,9 @@ namespace Develop02
         {
             return this.entries;
         }
+        public void SetAllEntries(List<Entry> entries)
+        {
+            this.entries = entries;
+        }
     }
 }

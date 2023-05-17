@@ -37,14 +37,7 @@ class Program
 
         float max = numbers[0];
 
-        foreach (float x in numbers)   
-        {
-            if (x > max)
-            {
-                max = numbers;
-            }
-        }     
-    
+     
     
     
     
