@@ -43,30 +43,19 @@ namespace Develop02
                         }
                         break;
                     case "3":
-                        Datastorage load = new Datastorage();
-                        string text = load.GetFilename();
-                        text = File.ReadAllText(text);
-                        string[] splitText = text.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                        for (int i = 0; i < splitText.Length; i += 3)
-                        {
-                            string date = splitText[i];
-                            string prompt = splitText[i + 1];
-                            string response = splitText[i + 2];
-                            string skip = splitText[i+3];
-                            Console.WriteLine($"Date: {date}");
-                            Console.WriteLine($"Prompt: {prompt}");
-                            Console.WriteLine($"Response: {response}");
-                            Console.WriteLine();
-                        }
+                        Datastorage dataStore = new Datastorage();
+                        journal.ClearAllEntries();
+                        dataStore.GetFilename();
+                        journal = dataStore.LoadFile();
+
                         break;
                     case "4":
                         Datastorage save = new Datastorage();
-                        string filename = save.GetFilename();
-                        save.SaveFile(journal.GetAllEntries(), filename);
-                        
-
+                        save.GetFilename();
+                        save.SaveFile(journal.GetAllEntries());
                         break;
                     case "5":
+                        input = "5";
                         break;
                     default:
                         break;

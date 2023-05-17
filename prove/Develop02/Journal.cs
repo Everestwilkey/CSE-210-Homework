@@ -23,5 +23,9 @@ namespace Develop02
         {
             this.entries = entries;
         }
+        public void ClearAllEntries()
+        {
+          entries.Clear();
+        }
     }
 }
