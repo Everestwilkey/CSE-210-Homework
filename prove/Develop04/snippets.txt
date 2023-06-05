@@ -1,0 +1,5 @@
+ rivers = new Dictionary<string, string>
+            {
+                {"June", "Blue Fly, Black Fly, Red Fly"},
+                {"July", "Blue Fly"}
+            };
