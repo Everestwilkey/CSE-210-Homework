@@ -7,30 +7,23 @@ namespace Develop04
 {
     public class Snake : River
     {
-        string name = "Snake River";
-        List<string> fishes = new List<string>() {"Brown Trout", "Ranbow Trout"};
-
-        Dictionary<string,string> riverInfo = new Dictionary<string, string>();
         public Snake()
         {
-            riverInfo = new Dictionary<string, string>
-            {
-                {"June", "Blue Fly, Black Fly, Red Fly"},
-                {"July", "Blue Fly"},
-                {"Augest", "Blue Fly, Black Fly, Red Fly"},
-                {"September", "Blue Fly"}
-            }; 
+            riverinfo["January"] = "Midge";
+            riverinfo["Febuary"] = "Midge";
+            riverinfo["March"] = "Midge, BWO";
+            riverinfo["April"] = "Midge, BWO";
+            riverinfo["May"] =  "Midge, BWO";
+            riverinfo["June"] = "Salmon Fly, Golden Stone, Caddis, PMD, March Brown, Green Drake, Midge";
+            riverinfo["July"] = "Salmon Fly, Golden Stone, Yellow Sally, Pink Albert, Caddis, PMD, Midge, Ants, Beetles, Hoppers";
+            riverinfo["Augest"] = "Yellow Sally, Caddis, PMD, Callibaetis, Midge, Trico, Ants, Beetles, Hoppers";
+            riverinfo["September"] = "Mahogany Dun, Midge, Ants, Beetles, Hoppers,";
+            riverinfo["October"] = "BWO, Midge";
+            riverinfo["November"] = "BWO, Midge";
+            riverinfo["Decmber"] = "Midge";
+            bool walk = false;
+            bool Float = true;
         }
-        public string GetRiverInfo(string month)
-        {
-            if (riverInfo.ContainsKey(month))
-            {
-                return riverInfo[month];
-            }
-            else
-            {
-                return "No river information available for this month.";
-            }
-        }
+        
     }
 }
