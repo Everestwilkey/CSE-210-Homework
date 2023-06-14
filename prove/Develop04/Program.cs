@@ -8,6 +8,6 @@ namespace Develop04
         {
             Menu menu = new Menu();
             menu.run();
-        }   
+        }
     }
 }

@@ -1,10 +1,12 @@
 namespace Develop04
 {
-    public class Lake
+    public class Lake : BodyOfWater
     {
         protected string name;
         protected string _month;
-        protected Dictionary<string,string> lakeinfo = new Dictionary<string, string>();
+
+        protected bool walk;
+        protected Dictionary<string, string> lakeinfo = new Dictionary<string, string>();
 
         private void SelectMonth()
         {
@@ -12,7 +14,7 @@ namespace Develop04
             _month = Console.ReadLine();
 
         }
-        
+
         public string GetLakeInfo()
         {
             SelectMonth();

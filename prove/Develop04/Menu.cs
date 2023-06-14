@@ -9,22 +9,26 @@ namespace Develop04
     {
         public void run()
         {
+            BodyOfWater bodyofwater = new BodyOfWater();
             Console.Write("Lake[2] or River[1]: ");
-            string choice =Console.ReadLine();
+            string choice = Console.ReadLine();
             if (choice == "2")
             {
                 Console.Write("Enter the name of the Lake: ");
                 string lakechoice = Console.ReadLine();
 
-                switch(lakechoice.ToLower())
+                switch (lakechoice.ToLower())
                 {
-                case "Henrys":
-                    HenrysLake henrysLake = new HenrysLake();
-                    string flies = henrysLake.GetLakeInfo();
-                    Console.WriteLine(flies);
-                    break;
-                case "Rirey":
-                    break;
+                    case "henrys":
+                        HenrysLake henrysLake = new HenrysLake();
+                        string flies = henrysLake.GetLakeInfo();
+                        Console.WriteLine(flies);
+                        bodyofwater.canWalk(henrysLake.returnwalkinfo());
+                        bodyofwater.canfloat(henrysLake.returnfloatsinfo());
+
+                        break;
+                    case "Rirey":
+                        break;
                 }
 
             }
@@ -33,15 +37,15 @@ namespace Develop04
                 Console.Write("Enter the name of the River: ");
                 string riverchoice = Console.ReadLine();
 
-                switch(riverchoice.ToLower())
+                switch (riverchoice.ToLower())
                 {
                     case "snake":
-                    Snake snakeriver = new Snake();
-                    string flies = snakeriver.GetRiverInfo();
-                    Console.WriteLine(flies);
-                    break;
+                        Snake snakeriver = new Snake();
+                        string flies = snakeriver.GetRiverInfo();
+                        Console.WriteLine(flies);
+                        break;
                     case "warm":
-                    break;
+                        break;
                 }
 
             }
@@ -49,7 +53,7 @@ namespace Develop04
             {
 
             }
-        
+
 
         }
     }
