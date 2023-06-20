@@ -9,6 +9,7 @@ namespace Develop04
     {
         public void run()
         {
+            //objects are made and are all under the body of waters class 
             River snakeriver = new River();
             Dictionary<string, string> riverinfo = new Dictionary<string, string>();
             riverinfo["January"] = "Midge";
@@ -29,21 +30,21 @@ namespace Develop04
 
             River warmriver = new River();
             Dictionary<string, string> warminfo = new Dictionary<string, string>();
-            riverinfo["January"] = "Midge";
-            riverinfo["Febuary"] = "Midge";
-            riverinfo["March"] = "Midge, BWO";
-            riverinfo["April"] = "Midge, BWO";
-            riverinfo["May"] = "Midge, BWO";
-            riverinfo["June"] = "Salmon Fly, Golden Stone, Caddis, PMD, March Brown, Green Drake, Midge";
-            riverinfo["July"] = "Salmon Fly, Golden Stone, Yellow Sally, Pink Albert, Caddis, PMD, Midge, Ants, Beetles, Hoppers";
-            riverinfo["Augest"] = "Yellow Sally, Caddis, PMD, Callibaetis, Midge, Trico, Ants, Beetles, Hoppers";
-            riverinfo["September"] = "Mahogany Dun, Midge, Ants, Beetles, Hoppers,";
-            riverinfo["October"] = "BWO, Midge";
-            riverinfo["November"] = "BWO, Midge";
-            riverinfo["Decmber"] = "Midge";
-            snakeriver.SetRiverInfo(riverinfo);
-            snakeriver.SetCanFloat(true);
-            snakeriver.SetCanWalk(false);
+            warminfo["January"] = "Midge";
+            warminfo["Febuary"] = "Midge";
+            warminfo["March"] = "Midge, BWO";
+            warminfo["April"] = "Midge, BWO";
+            warminfo["May"] = "Midge, BWO";
+            warminfo["June"] = "Salmon Fly, Golden Stone, Caddis, PMD, March Brown, Green Drake, Midge";
+            warminfo["July"] = "Salmon Fly, Golden Stone, Yellow Sally, Pink Albert, Caddis, PMD, Midge, Ants, Beetles, Hoppers";
+            warminfo["Augest"] = "Yellow Sally, Caddis, PMD, Callibaetis, Midge, Trico, Ants, Beetles, Hoppers";
+            warminfo["September"] = "Mahogany Dun, Midge, Ants, Beetles, Hoppers,";
+            warminfo["October"] = "BWO, Midge";
+            warminfo["November"] = "BWO, Midge";
+            warminfo["Decmber"] = "Midge";
+            warmriver.SetRiverInfo(riverinfo);
+            warmriver.SetCanFloat(true);
+            warmriver.SetCanWalk(false);
 
 
             Lake henryslake = new Lake();
@@ -63,6 +64,7 @@ namespace Develop04
             henryslake.SetLakeInfo(lakeinfo);
             henryslake.SetCanFloat(true);
             henryslake.SetCanWalk(false);
+
 
             Lake lakeRirey = new Lake();
             Dictionary<string, string> rireyinfo = new Dictionary<string, string>();
@@ -86,32 +88,32 @@ namespace Develop04
             bool end = false;
             while (end != true)
             {
-                // BodyOfWater bodyofwater = new BodyOfWater();
+
                 Console.Write("Lake[2] or River[1]: ");
                 string choice = Console.ReadLine();
                 if (choice == "2")
                 {
-                    Console.Write("Enter the name of the Lake: ");
+                    Console.Write("Enter the name of the Lake: (Henrys, Rirey) ");
                     string lakechoice = Console.ReadLine();
 
                     switch (lakechoice.ToLower())
                     {
                         case "henrys":
-                            
+                            // dictionary of flies
                             string flies = henryslake.GetLakeInfo();
+                            //prints flies for that month
                             Console.WriteLine(flies);
+                            //tell them if they can walk or float it.
                             henryslake.canWalk();
+                            henryslake.canfloat();
+                            //end the loop if nessary
                             end = IsStopping();
-
-                            // bodyofwater.canWalk(.returnwalkinfo());
-                            // bodyofwater.canfloat(henrysLake.returnfloatsinfo());
-
-
                             break;
-                        case "Rirey":
+                        case "rirey":
                             string flie = lakeRirey.GetLakeInfo();
                             Console.WriteLine(flie);
                             lakeRirey.canWalk();
+                            lakeRirey.canfloat();
                             end = IsStopping();
                             break;
                     }
@@ -119,7 +121,7 @@ namespace Develop04
                 }
                 else if (choice == "1")
                 {
-                    Console.Write("Enter the name of the River: ");
+                    Console.Write("Enter the name of the River: (Snake, Warm) ");
                     string riverchoice = Console.ReadLine();
 
                     switch (riverchoice.ToLower())
@@ -127,12 +129,18 @@ namespace Develop04
                         case "snake":
                             string flies = snakeriver.GetRiverInfo();
                             Console.WriteLine(flies);
+                            snakeriver.canWalk();
+                            snakeriver.canfloat();
                             end = IsStopping();
                             break;
                         case "warm":
+                            string fliess = warmriver.GetRiverInfo();
+                            Console.WriteLine(fliess);
+                            warmriver.canWalk();
+                            warmriver.canfloat();
                             end = IsStopping();
                             break;
-                            
+
                     }
 
                 }
@@ -144,6 +152,7 @@ namespace Develop04
 
 
         }
+        //stoping fuction
         public bool IsStopping()
         {
             Console.WriteLine("Would you like to end? [1]Yes [2]No ");
