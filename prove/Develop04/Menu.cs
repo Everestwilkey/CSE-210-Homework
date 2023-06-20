@@ -27,6 +27,24 @@ namespace Develop04
             snakeriver.SetCanFloat(true);
             snakeriver.SetCanWalk(false);
 
+            River warmriver = new River();
+            Dictionary<string, string> warminfo = new Dictionary<string, string>();
+            riverinfo["January"] = "Midge";
+            riverinfo["Febuary"] = "Midge";
+            riverinfo["March"] = "Midge, BWO";
+            riverinfo["April"] = "Midge, BWO";
+            riverinfo["May"] = "Midge, BWO";
+            riverinfo["June"] = "Salmon Fly, Golden Stone, Caddis, PMD, March Brown, Green Drake, Midge";
+            riverinfo["July"] = "Salmon Fly, Golden Stone, Yellow Sally, Pink Albert, Caddis, PMD, Midge, Ants, Beetles, Hoppers";
+            riverinfo["Augest"] = "Yellow Sally, Caddis, PMD, Callibaetis, Midge, Trico, Ants, Beetles, Hoppers";
+            riverinfo["September"] = "Mahogany Dun, Midge, Ants, Beetles, Hoppers,";
+            riverinfo["October"] = "BWO, Midge";
+            riverinfo["November"] = "BWO, Midge";
+            riverinfo["Decmber"] = "Midge";
+            snakeriver.SetRiverInfo(riverinfo);
+            snakeriver.SetCanFloat(true);
+            snakeriver.SetCanWalk(false);
+
 
             Lake henryslake = new Lake();
             Dictionary<string, string> lakeinfo = new Dictionary<string, string>();
