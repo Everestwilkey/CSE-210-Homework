@@ -10,7 +10,8 @@ namespace Develop04
 
         protected string name;
         protected string _month;
-        protected Dictionary<string, string> riverinfo = new Dictionary<string, string>();
+        
+        protected Dictionary<string, string> _riverinfo = new Dictionary<string, string>();
 
         private void SelectMonth()
         {
@@ -22,9 +23,13 @@ namespace Develop04
         public string GetRiverInfo()
         {
             SelectMonth();
-            return riverinfo[_month];
+            return _riverinfo[_month];
 
 
+        }
+        public void SetRiverInfo(Dictionary<string, string> riverinfo )
+        {
+            _riverinfo = riverinfo;
         }
     }
 }

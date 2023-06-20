@@ -7,9 +7,23 @@ namespace Develop04
 {
     public class BodyOfWater
     {
-        public void canWalk(bool walk)
+
+        private bool _canWalk;
+        private bool _canFloat;
+
+
+        public void SetCanWalk(bool canWalk)
         {
-            if (walk == true)
+            _canWalk = canWalk;
+        }
+         public void SetCanFloat(bool canfloat)
+        {
+            _canFloat = canfloat;
+        }
+        
+        public void canWalk()
+        {
+            if (_canWalk == true)
             {
                 Console.Write("You can walk this");
             }
@@ -18,9 +32,9 @@ namespace Develop04
                 Console.WriteLine("You Can't walk this");
             }
         }
-        public void canfloat(bool boat)
+        public void canfloat()
         {
-            if (boat == true)
+            if (_canFloat == true)
             {
                 Console.Write("You can float this");
             }

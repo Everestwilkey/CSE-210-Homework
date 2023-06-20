@@ -6,7 +6,7 @@ namespace Develop04
         protected string _month;
 
         protected bool walk;
-        protected Dictionary<string, string> lakeinfo = new Dictionary<string, string>();
+        protected Dictionary<string, string> _lakeinfo = new Dictionary<string, string>();
 
         private void SelectMonth()
         {
@@ -18,10 +18,13 @@ namespace Develop04
         public string GetLakeInfo()
         {
             SelectMonth();
-            return lakeinfo[_month];
+            return _lakeinfo[_month];
 
 
         }
-
+        public void SetLakeInfo(Dictionary<string, string> lakeinfo )
+        {
+            _lakeinfo = lakeinfo;
+        }
     }
 }

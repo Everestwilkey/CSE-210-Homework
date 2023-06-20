@@ -9,10 +9,66 @@ namespace Develop04
     {
         public void run()
         {
+            River snakeriver = new River();
+            Dictionary<string, string> riverinfo = new Dictionary<string, string>();
+            riverinfo["January"] = "Midge";
+            riverinfo["Febuary"] = "Midge";
+            riverinfo["March"] = "Midge, BWO";
+            riverinfo["April"] = "Midge, BWO";
+            riverinfo["May"] = "Midge, BWO";
+            riverinfo["June"] = "Salmon Fly, Golden Stone, Caddis, PMD, March Brown, Green Drake, Midge";
+            riverinfo["July"] = "Salmon Fly, Golden Stone, Yellow Sally, Pink Albert, Caddis, PMD, Midge, Ants, Beetles, Hoppers";
+            riverinfo["Augest"] = "Yellow Sally, Caddis, PMD, Callibaetis, Midge, Trico, Ants, Beetles, Hoppers";
+            riverinfo["September"] = "Mahogany Dun, Midge, Ants, Beetles, Hoppers,";
+            riverinfo["October"] = "BWO, Midge";
+            riverinfo["November"] = "BWO, Midge";
+            riverinfo["Decmber"] = "Midge";
+            snakeriver.SetRiverInfo(riverinfo);
+            snakeriver.SetCanFloat(true);
+            snakeriver.SetCanWalk(false);
+
+
+            Lake henryslake = new Lake();
+            Dictionary<string, string> lakeinfo = new Dictionary<string, string>();
+            lakeinfo["January"] = "Midge";
+            lakeinfo["Febuary"] = "Midge, BWO";
+            lakeinfo["March"] = "Midge, BWO";
+            lakeinfo["April"] = "Midge, BWO";
+            lakeinfo["May"] = "Salmon, March brown, Midge";
+            lakeinfo["June"] = "Salmon Fly, Golden Stone, Caddis, PMD, March Brown, Brown Drake, Green Drake, Midge";
+            lakeinfo["July"] = "Golden Stone, Yellow Sally, Caddis, PMD, Brown Drake, Callibaetis, Flav, Midge, Ants, Beetles, Hoppers";
+            lakeinfo["Augest"] = "Yellow Sally, Caddis, PMD, Callibaetis, Midge, Trico, Ants, Beetles, Hoppers";
+            lakeinfo["September"] = "Mahogany Dun, Midge, Ants, Beetles, Hoppers,";
+            lakeinfo["October"] = "BWO, Midge";
+            lakeinfo["November"] = "BWO, Midge";
+            lakeinfo["December"] = "Midge";
+            henryslake.SetLakeInfo(lakeinfo);
+            henryslake.SetCanFloat(true);
+            henryslake.SetCanWalk(false);
+
+            Lake lakeRirey = new Lake();
+            Dictionary<string, string> rireyinfo = new Dictionary<string, string>();
+            rireyinfo["January"] = "Midge";
+            rireyinfo["Febuary"] = "Midge, BWO";
+            rireyinfo["March"] = "Midge, BWO";
+            rireyinfo["April"] = "Midge, BWO";
+            rireyinfo["May"] = "Salmon, March brown, Midge";
+            rireyinfo["June"] = "Salmon Fly, Golden Stone, Caddis, PMD, March Brown, Brown Drake, Green Drake, Midge";
+            rireyinfo["July"] = "Golden Stone, Yellow Sally, Caddis, PMD, Brown Drake, Callibaetis, Flav, Midge, Ants, Beetles, Hoppers";
+            rireyinfo["Augest"] = "Yellow Sally, Caddis, PMD, Callibaetis, Midge, Trico, Ants, Beetles, Hoppers";
+            riverinfo["September"] = "Mahogany Dun, Midge, Ants, Beetles, Hoppers,";
+            rireyinfo["October"] = "BWO, Midge";
+            rireyinfo["November"] = "BWO, Midge";
+            rireyinfo["December"] = "Midge";
+            lakeRirey.SetLakeInfo(lakeinfo);
+            lakeRirey.SetCanFloat(true);
+            lakeRirey.SetCanWalk(false);
+
+
             bool end = false;
             while (end != true)
             {
-                BodyOfWater bodyofwater = new BodyOfWater();
+                // BodyOfWater bodyofwater = new BodyOfWater();
                 Console.Write("Lake[2] or River[1]: ");
                 string choice = Console.ReadLine();
                 if (choice == "2")
@@ -23,15 +79,22 @@ namespace Develop04
                     switch (lakechoice.ToLower())
                     {
                         case "henrys":
-                            HenrysLake henrysLake = new HenrysLake();
-                            string flies = henrysLake.GetLakeInfo();
+                            
+                            string flies = henryslake.GetLakeInfo();
                             Console.WriteLine(flies);
-                            bodyofwater.canWalk(henrysLake.returnwalkinfo());
-                            bodyofwater.canfloat(henrysLake.returnfloatsinfo());
+                            henryslake.canWalk();
+                            end = IsStopping();
+
+                            // bodyofwater.canWalk(.returnwalkinfo());
+                            // bodyofwater.canfloat(henrysLake.returnfloatsinfo());
 
 
                             break;
                         case "Rirey":
+                            string flie = lakeRirey.GetLakeInfo();
+                            Console.WriteLine(flie);
+                            lakeRirey.canWalk();
+                            end = IsStopping();
                             break;
                     }
 
@@ -44,12 +107,14 @@ namespace Develop04
                     switch (riverchoice.ToLower())
                     {
                         case "snake":
-                            Snake snakeriver = new Snake();
                             string flies = snakeriver.GetRiverInfo();
                             Console.WriteLine(flies);
+                            end = IsStopping();
                             break;
                         case "warm":
+                            end = IsStopping();
                             break;
+                            
                     }
 
                 }
@@ -61,14 +126,17 @@ namespace Develop04
 
 
         }
-        public void Stopping()
+        public bool IsStopping()
         {
             Console.WriteLine("Would you like to end? [1]Yes [2]No ");
-            string _end = Console.Read();
-            if (_end == )
+            string _input = Console.ReadLine();
+            if (_input == "1")
             {
-                end == true;
-                return end;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
